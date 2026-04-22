@@ -14,13 +14,13 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
     - name: Configure CMake
       run: cmake -S . -B build
     - name: Build
       run: cmake --build build --config Release
     - name: Upload Test results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: test-results
         path : build/unit_tests_sample.exe  
